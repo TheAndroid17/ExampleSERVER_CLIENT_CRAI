@@ -1,0 +1,29 @@
+{
+  "name": "crai-api",
+  "version": "1.0.0",
+  "description": "proyecto elaborado para el Curso de LP3",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SS-PachaP/crai_api_lp3.git"
+  },
+  "author": "David Pachamora P",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SS-PachaP/crai_api_lp3/issues"
+  },
+  "homepage": "https://github.com/SS-PachaP/crai_api_lp3#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "pg": "^6.4.0",
+    "sequelize": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

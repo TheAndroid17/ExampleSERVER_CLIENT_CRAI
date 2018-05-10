@@ -1,0 +1,44 @@
+<div class="card top-space" >
+    <div class="fs-headline p-">
+        <h2>Datos Préstamo</h2>
+    </div>
+    <div class="p+">
+        <strong class="fs-headline display-block tc-red-900">
+            {{prestamo.nombre_persona}}
+        </strong>
+		<div class="paragraph fs-body-1 mt+">
+            <label>COD UNIVERSITARIO: </label>{{prestamo.codigo_universitario}}
+        </div>
+		<div class="paragraph fs-body-1 mt+">
+            <label>DNI: </label>{{prestamo.dni}}
+        </div>
+        <br>
+        <strong class="fs-headline display-block tc-red-900">
+            Libro:
+        </strong>
+        <div class="paragraph fs-body-1 mt+">
+            <label>Título: </label>{{prestamo.nombre_libro}}
+        </div>
+        <div class="paragraph fs-body-1 mt+">
+            <label>Autor: </label>{{prestamo.autor}}
+        </div>
+		<div class="paragraph fs-body-1 mt+">
+            <label>Rama: </label>{{prestamo.rama}}
+        </div>
+        <div class="paragraph fs-body-1 mt+">
+            <label>Editorial: </label>{{prestamo.editorial}}
+        </div>
+        <div class="paragraph fs-body-1 mt+">
+                <label>Fecha Pretamo: </label>{{prestamo.fecha_salida}}
+        </div>
+		<div class="paragraph fs-body-1 mt+">
+            <label>Fecha Devolucion:</label>{{prestamo.fecha_entrega }}
+        </div>
+
+        <div class="card__actions">
+            <a href="#/" class="btn btn--m btn--blue btn--flat" lx-ripple>< ATRÁS</a>
+            <a href="#/editprestamo/{{prestamo.id_prestamo}}" class="btn btn--m btn--green btn--flat" lx-ripple>EDITAR</a>
+            <!--a ng-click="delete(prestamo)" class="btn btn--m btn--red btn--flat" lx-ripple>ELiminar</a-->
+        </div>
+    </div>
+</div>

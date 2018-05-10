@@ -1,0 +1,20 @@
+<div class="card top-space" >
+    <div class="fs-headline p-">
+        <h2>Datos Personales</h2>
+    </div>
+    <div class="p+">
+        <strong class="fs-headline display-block tc-red-900">
+            {{persona.nombre+' '+persona.app_paterno+' '+persona.app_materno}}
+        </strong>
+        <div class="paragraph fs-body-1 mt+">
+            <label>DNI: </label>{{persona.dni}}
+        </div>
+		<div class="paragraph fs-body-1 mt+">
+            <label>COD. UNIVERSITARIO: </label>{{persona.cod_univ}}
+        </div>
+        <div class="card__actions">
+            <a href="#/" class="btn btn--m btn--blue btn--flat" lx-ripple>< ATRÁS</a>
+            <a href="#/add_persona/" class="btn btn--m btn--green btn--flat" lx-ripple>SELECCIONAR</a>
+        </div>
+    </div>
+</div>

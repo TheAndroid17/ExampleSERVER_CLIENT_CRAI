@@ -1,0 +1,73 @@
+<form ng-submit="updatePrestamo()">
+    <div class="card top-space">
+        <div class="p+">
+            <h2>Editar Prestamo</h2>
+            <div flex-container="row">
+                <div flex-item>
+                    <lx-text-field label="Nombre">
+                        <input type="text" ng-model="prestamo.nombre_persona" disabled >
+                    </lx-text-field>
+                </div>
+            </div>
+            <div flex-container="row">
+                <div flex-item>
+                    <lx-text-field label="DNI">
+                        <input type="text" ng-model="prestamo.dni" disabled >
+                    </lx-text-field>
+                </div>
+            </div>
+            <div flex-container="row">
+                <div flex-item>
+                    <lx-text-field label="Libro">
+                        <input type="text" ng-model="prestamo.nombre_libro" disabled >
+                    </lx-text-field>
+                </div>
+            </div>
+            <div flex-container="row">
+                <div flex-item>
+                    <lx-text-field label="Autor">
+                        <input type="text" ng-model="prestamo.autor" disabled >
+                    </lx-text-field>
+                </div>
+            </div>
+            <div flex-container="row">
+                <div flex-item>
+                    <lx-text-field label="Fecha Prestamo">
+                        <input type="text" ng-model="prestamo.fecha_salida" disabled >
+                    </lx-text-field>
+                </div>
+            </div>
+            <div flex-container="row">
+                <div flex-item>
+                    <lx-text-field label="Fecha Entrega">
+                        <input type="text" ng-model="prestamo.fecha_entrega">
+                    </lx-text-field>
+                </div>
+            </div>
+
+            <div flex-container="row">
+                <div flex-item>
+                        <select  ng-model="prestamo.estado">
+                            <<option value=></option>
+                            <option value="0" >a tiempo para Devoler</option>
+                              <option value="1">Devuelve Puntual</option>
+                              <option value="2">Con Retraso</option>
+                              <option value="3">Cancelado</option>
+                        </select>
+
+                </div>
+            </div>
+        </div>
+        <div class="card__actions">
+            <button type="submit" class="btn btn--blue btn--l btn--raised">
+                Guardar
+            </button>
+            <a href="#/" type="submit" class="btn btn--orange btn--l btn--raised">
+                Cancelar
+            </a>
+            <button  ng-click="removePrestamo()"type="button" class="btn btn--red btn--l btn--raised">
+                eliminar
+            </button>
+        </div>
+    </div>
+</form>

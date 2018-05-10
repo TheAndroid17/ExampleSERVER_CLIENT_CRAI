@@ -1,0 +1,52 @@
+<form ng-submit="saveLibro()">
+    <div class="card top-space">
+        <div class="p+">
+            <h2>{{titulo}}</h2>
+            <div flex-container="row">
+                <div flex-item>
+                    <lx-text-field label="Titulo">
+                        <input type="text" ng-model="libro.nombre">
+                    </lx-text-field>
+                </div>
+            </div>
+            <div flex-container="row">
+                <div flex-item>
+                    <lx-text-field label="Autor">
+                        <input type="text"  ng-model="libro.autor">
+                    </lx-text-field>
+                </div>
+            </div>
+            <div flex-container="row">
+                <div flex-item>
+                    <lx-text-field label="Editorial">
+                        <input type="text"  ng-model="libro.editorial">
+                    </lx-text-field>
+                </div>
+            </div>
+            <div flex-container="row">
+                <div flex-item>
+                    <lx-text-field label="Año de publicacion">
+                        <input type="text"  ng-model="libro.anio">
+                    </lx-text-field>
+                </div>
+            </div>
+            <div flex-container="row">
+                <div flex-item>
+                    <lx-text-field label="Rama">
+                        <input type="text"  ng-model="libro.rama">
+                    </lx-text-field>
+                </div>
+            </div>
+        </div>
+        <div class="card__actions">
+            <button type="submit" class="btn btn--blue btn--l btn--raised">
+                Guardar
+            </button>
+            <a href="#/" type="submit" class="btn btn--red btn--l btn--raised">
+                Cancelar
+            </a>
+
+
+        </div>
+    </div>
+</form>

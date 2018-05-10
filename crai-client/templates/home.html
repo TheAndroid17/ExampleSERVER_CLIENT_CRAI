@@ -1,0 +1,122 @@
+<lx-tabs>
+    <lx-tab heading="Libros">
+        <div flex-container="row">
+            <div flex-item>
+                <lx-text-field label="Busca tu Libro">
+                    <input type="text" ng-model="buscador_lib" placeholder="">
+                </lx-text-field>
+            </div>
+        </div>
+        <div class="card top-space" ng-repeat="lib in libros|filter:buscador_lib" >
+            <div class="p+">
+                <strong class="fs-headline display-block tc-red-900">
+                    {{lib.nombre}}
+                </strong>
+                <div class="paragraph fs-body-1 mt+">
+                    {{lib.autor}}
+                </div>
+            </div>
+            <div class="card__actions">
+                <a href="#/libro/{{lib.id_libro}}" class="btn btn--m btn--blue btn--flat" lx-ripple>LEER MÁS</a>
+                <a href="#/editLibro/{{lib.id_libro}}" class="btn btn--m btn--orange btn--flat" lx-ripple>EDITAR</a>
+                <a ng-click="removeLibro(lib)" class="btn btn--m btn--red btn--flat" lx-ripple>ELIMINAR</a>
+                <a ng-click="addLibro(lib)" class="btn btn--m btn--green btn--flat" lx-ripple>ELEGIR</a>
+            </div>
+        </div>
+    </lx-tab>
+    <lx-tab heading="Alumnos">
+        <div flex-item>
+            <lx-text-field label="Busca Persona">
+                <input type="text" ng-model="busca_per" placeholder="">
+            </lx-text-field>
+        </div>
+        <div class="card top-space" ng-repeat="persona in personas|filter:busca_per">
+            <div flex-container="row">
+                <div class="card__img card__img--left" style="height: 160px;">
+                    <img src="imgs/user.jpg" alt="">
+                </div>
+                <div flex-item flex-container="column">
+                    <div flex-item>
+                        <strong class="fs-headline display-block tc-red-900">
+                            {{persona.nombre+' '+persona.app_paterno+' '+persona.app_materno}}
+                        </strong>
+                        <strong class="fs-subhead tc-black-2 display-block">
+                            DNI: {{persona.dni}}<br>
+                            COD: {{persona.codigo_universitario}}
+                        </strong>
+                    </div>
+                    <div class="card__actions">
+                        <a href="#/persona/{{persona.id_persona}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Ver más</a>
+                        <a href="#/editpersona/{{persona.id_persona}}" class="btn btn--m btn--orange btn--flat" lx-ripple>editar</a>
+                        <a ng-click="add_persona(persona)" class="btn btn--m btn--green btn--flat" lx-ripple>seleccionar</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </lx-tab>
+
+    <lx-tab heading="New Prestamo">
+        <div class="card top-space"  >
+            <div class="p+">
+                <strong class="fs-headline display-block tc-red-900">
+                    <b>Alumno:</b> {{newPrestamo.nombre_persona}}
+                </strong>
+            <div class="p+">
+                <strong class="fs-headline display-block tc-blue-900">
+                    <b>Libro:</b> {{newPrestamo.nombre_libro}} - {{newPrestamo.autor}}
+                </strong>
+            </div>
+            <div class="p+">
+                <strong class="fs-headline display-block tc-green-900">
+                    Fecha Salida:  {{newPrestamo.fecha_salida}}
+                </strong>
+            </div>
+            <div flex-container="row">
+                <div flex-item>
+                    <lx-text-field label="Fecha Devolucion">
+                        <input type="text" ng-model="newPrestamo.fecha_entrega">
+                    </lx-text-field>
+                </div>
+            </div>
+            </div>
+            <div class="card__actions">
+                <button ng-click="savePrestamo()" class="btn btn--m btn--green btn--raised" lx-ripple>Realizar Perstamo</button>
+                <button ng-click="newPrestamo={}" class="btn btn--m btn--red btn--raised" lx-ripple>Cancelar y Limpiar</button>
+                <!--a ng-click="removeLibro(prest)" class="btn btn--m btn--red btn--flat" lx-ripple>ELIMINAR</a>
+                <a ng-click="addLibro(prest)" class="btn btn--m btn--green btn--flat" lx-ripple>AÑADIR</a-->
+            </div>
+        </div>
+    </lx-tab>
+
+    <lx-tab heading="Prestamos">
+        <div flex-item>
+            <lx-text-field label="Busca Persona o Libro">
+                <input type="text" ng-model="busca_prestamo" placeholder="">
+            </lx-text-field>
+        </div>
+        <div class="card top-space" ng-repeat="prest in prestamos|filter:busca_prestamo" >
+            <div class="p+">
+                <strong class="fs-headline display-block tc-red-900">
+                    {{prest.nombre_persona}}
+                </strong>
+                <div class="paragraph fs-body-1 mt+">
+                    <strong class="tc-red">Libro:</strong><br>
+                    {{prest.nombre_libro}}
+                </div>
+                <div class="paragraph fs-body-1 mt+">
+                    <strong class="tc-red">Estado:</strong><br>
+                    {{prest.nombre_estado}}
+                </div>
+            </div>
+            <div class="card__actions">
+                <a href="#/prestamo/{{prest.id_prestamo}}" class="btn btn--m btn--blue btn--flat" lx-ripple>VER MÁS</a>
+                <a href="#/editprestamo/{{prest.id_prestamo}}" class="btn btn--m btn--orange btn--flat" lx-ripple>EDITAR</a>
+                <!--a ng-click="removeLibro(prest)" class="btn btn--m btn--red btn--flat" lx-ripple>ELIMINAR</a>
+                <a ng-click="addLibro(prest)" class="btn btn--m btn--green btn--flat" lx-ripple>AÑADIR</a-->
+            </div>
+        </div>
+    </lx-tab>
+
+</lx-tabs>
